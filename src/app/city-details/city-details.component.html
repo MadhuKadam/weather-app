@@ -4,7 +4,13 @@
             <div class="panel-heading"><a>{{city?.name}}</a></div>
             <div class="panel-body">
                 <div class="temp">
-                    <span>Temprature : </span> {{weather?.main?.temp}}
+                    <span>Temprature : </span> {{wea?.main?.temp - 273.15 | number:'1.0-0'}} <sup>o</sup>C
+                </div>
+                <div class="temp">
+                    <span>Minimum Temp : </span> {{wea?.main?.temp_min - 273.15 | number:'1.0-0'}} <sup>o</sup>C
+                </div>
+                <div class="temp">
+                    <span>Maximum Temp : </span> {{wea?.main?.temp_max - 273.15 | number:'1.0-0'}} <sup>o</sup>C
                 </div>
                 <div class="sea-level">
                     <span>Sea Level : </span> {{wea?.main?.sea_level | number:'1.0-0'}}m
