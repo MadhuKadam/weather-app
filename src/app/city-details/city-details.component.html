@@ -1,17 +1,14 @@
 <div class="card-container">
-    <div class="col-md-4">
+    <div class="col-md-4" *ngFor="let wea of weather">
         <div class="panel panel-default">
-            <div class="panel-heading"><a>{{city.name}}</a></div>
+            <div class="panel-heading"><a>{{city?.name}}</a></div>
             <div class="panel-body">
                 <div class="temp">
-                    <span>Temprature : </span> {{city?.main?.temp}}
+                    <span>Temprature : </span> {{weather?.main?.temp}}
                 </div>
-                <!-- <div class="sunrise">
-                    <span>Sunrise : </span> {{city?.sys?.sunrise | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                <div class="sea-level">
+                    <span>Sea Level : </span> {{wea?.main?.sea_level | number:'1.0-0'}}m
                 </div>
-                <div class="sunset">
-                    <span>Sunset : </span> {{city?.sys?.sunset | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
-                </div> -->
             </div>
         </div>
     </div>

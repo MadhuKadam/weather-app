@@ -25,13 +25,21 @@
             <div class="panel-heading"><a>{{city.name}}</a></div>
             <div class="panel-body">
                 <div class="temp">
-                    <span>Temprature : </span> {{city?.main?.temp}}
+                    <span>Temprature : </span> {{city?.main?.temp - 273.15 | number:'1.0-0'}} <sup>o</sup>C
+                </div>
+                <div class="temp">
+                    <span>Minimum Temp : </span> {{city?.main?.temp_min - 273.15 | number:'1.0-0'}} <sup>o</sup>C
+                </div>
+                <div class="temp">
+                    <span>Maximum Temp : </span> {{city?.main?.temp_max - 273.15 | number:'1.0-0'}} <sup>o</sup>C
                 </div>
                 <div class="sunrise">
-                    <span>Sunrise : </span> {{city?.sys?.sunrise*1000 | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                    <span>Sunrise : </span> {{city?.sys?.sunrise*1000 |
+                    date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
                 </div>
                 <div class="sunset">
-                    <span>Sunset : </span> {{city?.sys?.sunset*1000 | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                    <span>Sunset : </span> {{city?.sys?.sunset*1000 |
+                    date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
                 </div>
             </div>
         </div>

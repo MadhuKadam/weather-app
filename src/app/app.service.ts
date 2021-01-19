@@ -22,6 +22,6 @@ export class AppService {
    * for the get all cities data
    */
   getCityByName(city): Observable<any> {
-    return this.httpClient.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3d8b309701a13f65b660fa2c64cdc517`);
+    return this.httpClient.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=3d8b309701a13f65b660fa2c64cdc517`);
   }
 }
