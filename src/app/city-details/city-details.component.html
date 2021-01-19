@@ -1,0 +1,18 @@
+<div class="card-container">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a>{{city.name}}</a></div>
+            <div class="panel-body">
+                <div class="temp">
+                    <span>Temprature : </span> {{city?.main?.temp}}
+                </div>
+                <!-- <div class="sunrise">
+                    <span>Sunrise : </span> {{city?.sys?.sunrise | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                </div>
+                <div class="sunset">
+                    <span>Sunset : </span> {{city?.sys?.sunset | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

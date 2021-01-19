@@ -1,0 +1,19 @@
+:host {
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        .container {
+            padding: 5%;
+        }
+    }
+
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .container {
+            padding: 12% 10%;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .container {
+            padding: 18% 10%;
+        }
+    }
+}

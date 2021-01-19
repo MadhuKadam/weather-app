@@ -1,0 +1,39 @@
+<!-- <div class="card-container">
+
+        <div class="card" *ngFor="let city of cities?.list">
+            <div class="city-name col-md-12">
+                <a rel="noopener">
+                    <h4>{{city.name}}</h4>
+                </a>
+            </div>
+            <div class="temp">
+                <span>Temprature : </span> {{city?.main?.temp}}
+            </div>
+            <div class="sunrise">
+                <span>Sunrise : </span> {{city?.sys?.sunrise | date:'mediumTime'}}
+            </div>
+            <div class="sunset">
+                <span>Sunset : </span> {{city?.sys?.sunset | date:'mediumTime'}}
+            </div>
+        </div>
+    </div> -->
+
+
+<div class="card-container">
+    <div class="col-md-4" *ngFor="let city of cities?.list" (click)="openCityDetails(city.name)">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a>{{city.name}}</a></div>
+            <div class="panel-body">
+                <div class="temp">
+                    <span>Temprature : </span> {{city?.main?.temp}}
+                </div>
+                <div class="sunrise">
+                    <span>Sunrise : </span> {{city?.sys?.sunrise*1000 | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                </div>
+                <div class="sunset">
+                    <span>Sunset : </span> {{city?.sys?.sunset*1000 | date:'mediumTime':getTimeZone(city?.sys?.timezone)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
